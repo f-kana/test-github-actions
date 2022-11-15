@@ -1,0 +1,11 @@
+<!-- 
+    Sample from https://qiita.com/takutoy/items/ba088ca5a3896f433039
+    This may occur a cross-site scripting caution.
+-->
+<html>
+<body>
+こんにちは 
+<script>document.write(decodeURI(location.hash.substring(1)));</script>
+さん！
+</body>
+</html>
