@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 "flake8" = "*"
+
+# Too old lib must include many security issues.
 flask = "==0.1"
 
 [dev-packages]
