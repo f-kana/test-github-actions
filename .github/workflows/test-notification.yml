@@ -1,0 +1,25 @@
+name: Test Notification
+
+on:
+  push:
+    branches-ignore: [ "gh-actions-dev*" ]
+jobs:
+  notification :
+    runs-on: ubuntu-latest
+    environment:
+      name: non-prd
+    steps:
+    - uses: actions/checkout@v3
+    - name: Failing
+      runs: exit 1
+    - name: Notify Slack on Failure
+      if: failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: #monitoring
+        SLACK_COLOR: '#FF0000'
+        SLACK_ICON: ':boom:'
+        SLACK_MESSAGE: 'Deployment failed :boom:'
+        SLACK_TITLE: 'CD Pipeline Failed'
+        SLACK_USERNAME: 'GitHub Actions'
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
