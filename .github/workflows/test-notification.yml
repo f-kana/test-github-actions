@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Failing
-      runs: exit 1
+      run: exit 1
     - name: Notify Slack on Failure
       if: failure()
       uses: rtCamp/action-slack-notify@v2
