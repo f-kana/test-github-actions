@@ -19,7 +19,7 @@ jobs:
         SLACK_CHANNEL: #monitoring
         SLACK_COLOR: '#FF0000'
         SLACK_ICON: ':boom:'
-        SLACK_MESSAGE: 'Deployment failed :boom:'
+        SLACK_MESSAGE: '<!channel> Deployment failed :boom:'
         SLACK_TITLE: 'CD Pipeline Failed'
         SLACK_USERNAME: 'GitHub Actions'
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
